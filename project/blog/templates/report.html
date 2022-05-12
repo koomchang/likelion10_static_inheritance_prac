@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block contents %}
+<h1>"{{blog.title}}" 글은 {{blog.report}} 회 신고되었습니다.</h1>
+<br>
+<h3>3 회 신고시 글을 삭제합니다.</h3>
+<br>
+<a href="{% url 'home' %}">집으로</a>
+{% endblock %}

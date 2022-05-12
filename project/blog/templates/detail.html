@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block contents %}
+<h1>{{blog.title}}</h1>
+{{blog.created_at}}
+<br>
+<p>{{blog.contents}}</p>
+{% if blog.image %}
+<img src="{{blog.image.url}}" width=100>
+{% endif %}
+<a href="{% url 'home' %}">집으로</a>
+<a href="{% url 'edit' blog.id %}">글 수정하기</a>
+<a href="{%url 'delete' blog.id %}">글 삭제하기</a>
+<a href="{%url 'report' blog.id %}">
+    <button name="report" value="{blog.id}">신고하기</button>
+</a>
+{% endblock %}
